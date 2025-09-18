@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asociación María Martínez de Nisser - Cuidadoras de Vida</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@400;600;700&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .script-font {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #065f46 0%, #059669 25%, #10b981 50%, #34d399 75%, #6ee7b7 100%);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-delayed {
+            animation: float 6s ease-in-out infinite 2s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .pulse-grow {
+            animation: pulse-grow 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-grow {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .water-drop {
+            background: radial-gradient(circle at 30% 30%, rgba(99, 199, 255, 0.8), rgba(14, 165, 233, 0.6), rgba(8, 145, 178, 0.4));
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        }
+        
+        .leaf-shape {
+            background: linear-gradient(45deg, #22c55e, #16a34a);
+            border-radius: 0 100% 0 100%;
+        }
+        
+        .heart-beat {
+            animation: heart-beat 2s ease-in-out infinite;
+        }
+        
+        @keyframes heart-beat {
+            0%, 100% { transform: scale(1); }
+            25%, 75% { transform: scale(1.1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        .language-hidden {
+            display: none;
+        }
+        
+        .language-selector {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-green-50 to-emerald-100 overflow-x-hidden">
+    
+    <!-- Language Selector -->
+    <div class="fixed top-4 right-4 z-50 language-selector rounded-2xl p-3">
+        <div class="flex space-x-2">
+            <button onclick="changeLanguage('es')" class="lang-btn bg-white text-green-800 px-4 py-2 rounded-xl font-semibold text-sm hover:bg-green-50 transition-all active-lang" data-lang="es">
+                🇨🇴 ES
+            </button>
+            <button onclick="changeLanguage('en')" class="lang-btn bg-white/70 text-green-800 px-4 py-2 rounded-xl font-semibold text-sm hover:bg-white transition-all" data-lang="en">
+                🇺🇸 EN
+            </button>
+            <button onclick="changeLanguage('fr')" class="lang-btn bg-white/70 text-green-800 px-4 py-2 rounded-xl font-semibold text-sm hover:bg-white transition-all" data-lang="fr">
+                🇫🇷 FR
+            </button>
+        </div>
+    </div>
+
+    <!-- SPANISH VERSION -->
+    <div class="language-content" data-lang="es">
+        <!-- Hero Section -->
+        <section class="min-h-screen hero-gradient relative overflow-hidden flex items-center">
+            <!-- Floating Elements -->
+            <div class="absolute top-20 left-10 w-16 h-16 water-drop floating opacity-30"></div>
+            <div class="absolute top-32 right-20 w-12 h-12 leaf-shape floating-delayed opacity-40"></div>
+            <div class="absolute bottom-32 left-20 w-20 h-20 rounded-full bg-yellow-400 floating opacity-20"></div>
+            <div class="absolute top-1/2 right-10 w-8 h-8 bg-pink-400 rounded-full floating opacity-25"></div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-4xl mx-auto text-center text-white">
+                    <h1 class="text-6xl md:text-8xl font-bold mb-6 fade-in script-font">
+                        ¿Sabías que en Sonsón...
+                    </h1>
+                    <div class="text-2xl md:text-3xl mb-8 fade-in leading-relaxed">
+                        <p class="mb-4">48 mujeres extraordinarias han estado</p>
+                        <p class="mb-4 text-yellow-200 font-semibold">sembrando esperanza</p>
+                        <p class="mb-4">desde el año 2002?</p>
+                    </div>
+                    <div class="fade-in">
+                        <p class="text-xl md:text-2xl mb-8 text-green-100">
+                            Esta es nuestra historia. Esta es tu invitación a conocer
+                            <span class="font-bold text-yellow-300">un legado de cuidado y amor</span>
+                        </p>
+                        <button onclick="scrollToSection('historia-es')" class="bg-white text-green-800 px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            Descubre Nuestra Historia ✨
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Historia Section -->
+        <section id="historia-es" class="py-20 bg-gradient-to-br from-white to-green-50 relative">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-400 via-emerald-500 to-green-600"></div>
+            
+            <div class="container mx-auto px-6">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16 fade-in">
+                        <h2 class="text-5xl md:text-6xl font-bold text-green-800 mb-6 script-font">
+                            Imagínate por un momento...
+                        </h2>
+                        <p class="text-xl text-gray-700">
+                            El 27 de junio de 2002, un grupo de mujeres valientes decidió que era hora de cambiar su realidad
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                        <div class="fade-in">
+                            <div class="bg-green-100 p-8 rounded-3xl shadow-lg pulse-grow">
+                                <h3 class="text-2xl font-bold text-green-800 mb-4">The Moment That Changed Everything</h3>
+                                <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                                    When we decided to come together, we didn't know we were planting the seed of something extraordinary. 
+                                    We were women with dreams, with the desire to care not only for our families, but for our entire community.
+                                </p>
+                                <p class="text-green-700 font-semibold">
+                                    And so the María Martínez de Nisser Association was born ❤️
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="fade-in">
+                            <div class="bg-white p-4 rounded-2xl shadow-xl">
+                                <div class="h-80 bg-gradient-to-br from-green-200 to-emerald-300 rounded-xl flex items-center justify-center">
+                                    <p class="text-green-800 text-center font-semibold text-lg">
+                                        📸 Photo space:<br>
+                                        "The first meeting - 2002"<br>
+                                        <span class="text-sm font-normal">Founding moment of our association</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Visual -->
+                    <div class="fade-in mb-16">
+                        <div class="bg-gradient-to-r from-green-600 to-emerald-600 p-8 rounded-3xl text-white text-center">
+                            <h3 class="text-3xl font-bold mb-4 script-font">More than 20 years later...</h3>
+                            <p class="text-xl mb-6">
+                                We're still here, stronger than ever, being 48 women who have transformed not only their own lives, 
+                                but the life of all Sonsón
+                            </p>
+                            <div class="grid md:grid-cols-3 gap-6 mt-8">
+                                <div class="bg-white/20 p-4 rounded-2xl heart-beat">
+                                    <div class="text-3xl mb-2">💚</div>
+                                    <div class="font-bold">Mental Health</div>
+                                </div>
+                                <div class="bg-white/20 p-4 rounded-2xl heart-beat" style="animation-delay: 0.5s">
+                                    <div class="text-3xl mb-2">🌱</div>
+                                    <div class="font-bold">Food Sovereignty</div>
+                                </div>
+                                <div class="bg-white/20 p-4 rounded-2xl heart-beat" style="animation-delay: 1s">
+                                    <div class="text-3xl mb-2">🌍</div>
+                                    <div class="font-bold">Environmental Care</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What we do -->
+        <section class="py-20 bg-gradient-to-br from-emerald-50 to-green-100">
+            <div class="container mx-auto px-6">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16 fade-in">
+                        <h2 class="text-5xl font-bold text-green-800 mb-6 script-font">
+                            Wondering what exactly we do?
+                        </h2>
+                        <p class="text-xl text-gray-700">
+                            Every action has a story, every project has heart
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Water Festival -->
+                        <div class="fade-in bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="h-48 bg-gradient-to-br from-blue-200 to-cyan-300 rounded-2xl mb-6 flex items-center justify-center">
+                                <p class="text-blue-800 text-center font-semibold">
+                                    📸 Women and Water Festival<br>
+                                    <span class="text-sm font-normal">Celebrating life</span>
+                                </p>
+                            </div>
+                            <h3 class="text-xl font-bold text-blue-700 mb-3">Women and Water Festival</h3>
+                            <p class="text-gray-600 mb-4">
+                                Because water is life, and we are guardians of life. 
+                                Each festival is a celebration of our strength and unity.
+                            </p>
+                            <div class="text-blue-600 font-semibold">💧 Caring for our most precious resource</div>
+                        </div>
+                        
+                        <!-- Eco Gardens -->
+                        <div class="fade-in bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="h-48 bg-gradient-to-br from-green-200 to-lime-300 rounded-2xl mb-6 flex items-center justify-center">
+                                <p class="text-green-800 text-center font-semibold">
+                                    📸 Eco Gardens<br>
+                                    <span class="text-sm font-normal">Sowing the future</span>
+                                </p>
+                            </div>
+                            <h3 class="text-xl font-bold text-green-700 mb-3">Eco Garden Planting</h3>
+                            <p class="text-gray-600 mb-4">
+                                With our own hands we cultivate not only food, but hope. 
+                                Each seed is a promise of a more sustainable future.
+                            </p>
+                            <div class="text-green-600 font-semibold">🌱 Feeding the soul and body</div>
+                        </div>
+                        
+                        <!-- Markets -->
+                        <div class="fade-in bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="h-48 bg-gradient-to-br from-yellow-200 to-orange-300 rounded-2xl mb-6 flex items-center justify-center">
+                                <p class="text-orange-800 text-center font-semibold">
+                                    📸 Monthly Markets<br>
+                                    <span class="text-sm font-normal">Exchange and community</span>
+                                </p>
+                            </div>
+                            <h3 class="text-xl font-bold text-orange-700 mb-3">Monthly Markets</h3>
+                            <p class="text-gray-600 mb-4">
+                                Each month we meet to exchange not only products, but stories, 
+                                smiles and dreams. It's our space for encounter and strengthening.
+                            </p>
+                            <div class="text-orange-600 font-semibold">🏪 Building conscious community</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Life Caregivers -->
+        <section class="py-20 bg-gradient-to-br from-purple-100 to-pink-100">
+            <div class="container mx-auto px-6">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16 fade-in">
+                        <h2 class="text-5xl font-bold text-purple-800 mb-6 script-font">
+                            And then came "Life Caregivers"...
+                        </h2>
+                        <p class="text-xl text-gray-700">
+                            The project that transformed us forever
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                        <div class="fade-in">
+                            <div class="bg-white p-4 rounded-2xl shadow-xl">
+                                <div class="h-80 bg-gradient-to-br from-purple-200 to-pink-300 rounded-xl flex items-center justify-center">
+                                    <p class="text-purple-800 text-center font-semibold text-lg">
+                                        📸 Photo space:<br>
+                                        "Life Caregivers Meeting"<br>
+                                        <span class="text-sm font-normal">Moment of recognition and growth</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="fade-in">
+                            <div class="bg-gradient-to-br from-purple-600 to-pink-600 p-8 rounded-3xl text-white shadow-xl">
+                                <h3 class="text-3xl font-bold mb-6">Do you know what we discovered?</h3>
+                                <div class="space-y-4 text-lg">
+                                    <p class="flex items-start">
+                                        <span class="text-2xl mr-3">💝</span>
+                                        That we are natural caregivers, not only of others, but of ourselves
+                                    </p>
+                                    <p class="flex items-start">
+                                        <span class="text-2xl mr-3">🤝</span>
+                                        That we can connect with other collectives and create incredible support networks
+                                    </p>
+                                    <p class="flex items-start">
+                                        <span class="text-2xl mr-3">🌟</span>
+                                        That our work transcends Sonsón and reaches the entire region
+                                    </p>
+                                    <p class="flex items-start">
+                                        <span class="text-2xl mr-3">🎓</span>
+                                        That we have powerful tools to keep growing
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Dreams -->
+        <section class="py-20 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white relative overflow-hidden">
+            <!-- Decorative stars -->
+            <div class="absolute top-20 left-10 w-4 h-4 bg-yellow-400 rounded-full floating opacity-70"></div>
+            <div class="absolute top-32 right-20 w-3 h-3 bg-pink-400 rounded-full floating-delayed opacity-60"></div>
+            <div class="absolute bottom-32 left-20 w-5 h-5 bg-blue-400 rounded-full floating opacity-50"></div>
+            <div class="absolute top-1/2 right-10 w-2 h-2 bg-green-400 rounded-full floating-delayed opacity-80"></div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-6xl mx-auto text-center">
+                    <div class="fade-in mb-16">
+                        <h2 class="text-5xl md:text-6xl font-bold mb-6 script-font">
+                            Our Dreams Shine Like Stars
+                        </h2>
+                        <p class="text-xl text-purple-200">
+                            And we want you to be part of them
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-16">
+                        <div class="fade-in bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
+                            <div class="text-4xl mb-4">🤗</div>
+                            <h3 class="text-2xl font-bold mb-4">Stay United and Strong</h3>
+                            <p class="text-lg text-purple-100">
+                                Because together we are invincible. We want to remain that group of 48 women 
+                                who care for each other and care for their territory with love.
+                            </p>
+                        </div>
+                        
+                        <div class="fade-in bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
+                            <div class="text-4xl mb-4">🌐</div>
+                            <h3 class="text-2xl font-bold mb-4">Create Powerful Alliances</h3>
+                            <p class="text-lg text-purple-100">
+                                We dream of connecting with more collectives, organizations and people who, like us, 
+                                believe in the power of care to transform communities.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="fade-in bg-gradient-to-r from-yellow-500 to-orange-500 p-8 rounded-3xl">
+                        <h3 class="text-3xl font-bold mb-4 text-white">Impact That Transcends</h3>
+                        <p class="text-xl text-white mb-6">
+                            We don't just want to change Sonsón. We want our example to inspire all of Antioquia, 
+                            the entire country. We want to demonstrate that rural women have the power to transform the world.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-6 mt-8">
+                            <div class="bg-white p-4 rounded-2xl shadow-xl">
+                                <div class="h-48 bg-gradient-to-br from-orange-200 to-red-300 rounded-xl flex items-center justify-center">
+                                    <p class="text-orange-800 text-center font-semibold">
+                                        📸 Vision of the Future<br>
+                                        <span class="text-sm font-normal">Our dreams come true</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl shadow-xl">
+                                <div class="h-48 bg-gradient-to-br from-blue-200 to-indigo-300 rounded-xl flex items-center justify-center">
+                                    <p class="text-blue-800 text-center font-semibold">
+                                        📸 Our Legacy<br>
+                                        <span class="text-sm font-normal">Impact on the community</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-20 bg-gradient-to-br from-green-600 to-emerald-700">
+            <div class="container mx-auto px-6 text-center">
+                <div class="max-w-4xl mx-auto text-white fade-in">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 script-font">
+                        Do you feel this story could also be yours?
+                    </h2>
+                    <p class="text-xl mb-8 text-green-100">
+                        We invite you to get to know us, to be part of this family that builds a better world every day. 
+                        Because care is not just our mission, it's our gift to the world.
+                    </p>
+                    <div class="space-y-4 md:space-y-0 md:space-x-6 md:flex md:justify-center">
+                        <button class="bg-white text-green-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-50 transition-all duration-300 transform hover:scale-105 shadow-lg block w-full md:w-auto">
+                            Get to Know Us Better 💚
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-green-700 transition-all duration-300 transform hover:scale-105 block w-full md:w-auto">
+                            Join Our Mission 🤝
+                        </button>
+                    </div>
+                    
+                    <div class="mt-16 bg-white/10 backdrop-blur-sm p-6 rounded-3xl border border-white/20">
+                        <p class="text-lg text-green-100 mb-4">
+                            <span class="font-bold">María Martínez de Nisser Women's Municipal Association</span>
+                        </p>
+                        <p class="text-green-200">
+                            Sonsón, Antioquia - Colombia<br>
+                            Founded with love on June 27, 2002 ❤️
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FRENCH VERSION -->
+    <div class="language-content language-hidden" data-lang="fr">
+        <!-- Hero Section -->
+        <section class="min-h-screen hero-gradient relative overflow-hidden flex items-center">
+            <!-- Floating Elements -->
+            <div class="absolute top-20 left-10 w-16 h-16 water-drop floating opacity-30"></div>
+            <div class="absolute top-32 right-20 w-12 h-12 leaf-shape floating-delayed opacity-40"></div>
+            <div class="absolute bottom-32 left-20 w-20 h-20 rounded-full bg-yellow-400 floating opacity-20"></div>
+            <div class="absolute top-1/2 right-10 w-8 h-8 bg-pink-400 rounded-full floating opacity-25"></div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-4xl mx-auto text-center text-white">
+                    <h1 class="text-6xl md:text-8xl font-bold mb-6 fade-in script-font">
+                        Saviez-vous qu'à Sonsón...
+                    </h1>
+                    <div class="text-2xl md:text-3xl mb-8 fade-in leading-relaxed">
+                        <p class="mb-4">48 femmes extraordinaires</p>
+                        <p class="mb-4 text-yellow-200 font-semibold">sèment l'espoir</p>
+                        <p class="mb-4">depuis 2002 ?</p>
+                    </div>
+                    <div class="fade-in">
+                        <p class="text-xl md:text-2xl mb-8 text-green-100">
+                            Voici notre histoire. Voici votre invitation à découvrir
+                            <span class="font-bold text-yellow-300">un héritage de soin et d'amour</span>
+                        </p>
+                        <button onclick="scrollToSection('historia-fr')" class="bg-white text-green-800 px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            Découvrez Notre Histoire ✨
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Historia Section -->
+        <section id="historia-fr" class="py-20 bg-gradient-to-br from-white to-green-50 relative">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-400 via-emerald-500 to-green-600"></div>
+            
+            <div class="container mx-auto px-6">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16 fade-in">
+                        <h2 class="text-5xl md:text-6xl font-bold text-green-800 mb-6 script-font">
+                            Imaginez un instant...
+                        </h2>
+                        <p class="text-xl text-gray-700">
+                            Le 27 juin 2002, un groupe de femmes courageuses a décidé qu'il était temps de changer leur réalité
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                        <div class="fade-in">
+                            <div class="bg-green-100 p-8 rounded-3xl shadow-lg pulse-grow">
+                                <h3 class="text-2xl font-bold text-green-800 mb-4">Le Moment Qui A Tout Changé</h3>
+                                <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                                    Quand nous avons décidé de nous unir, nous ne savions pas que nous plantions la graine de quelque chose d'extraordinaire. 
+                                    Nous étions des femmes avec des rêves, avec l'envie de prendre soin non seulement de nos familles, mais de toute notre communauté.
+                                </p>
+                                <p class="text-green-700 font-semibold">
+                                    Et ainsi naquit l'Association María Martínez de Nisser ❤️
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="fade-in">
+                            <div class="bg-white p-4 rounded-2xl shadow-xl">
+                                <div class="h-80 bg-gradient-to-br from-green-200 to-emerald-300 rounded-xl flex items-center justify-center">
+                                    <p class="text-green-800 text-center font-semibold text-lg">
+                                        📸 Espace photo :<br>
+                                        "La première rencontre - 2002"<br>
+                                        <span class="text-sm font-normal">Moment fondateur de notre association</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Visual -->
+                    <div class="fade-in mb-16">
+                        <div class="bg-gradient-to-r from-green-600 to-emerald-600 p-8 rounded-3xl text-white text-center">
+                            <h3 class="text-3xl font-bold mb-4 script-font">Plus de 20 ans plus tard...</h3>
+                            <p class="text-xl mb-6">
+                                Nous sommes toujours là, plus fortes que jamais, étant 48 femmes qui ont transformé non seulement leurs propres vies, 
+                                mais la vie de tout Sonsón
+                            </p>
+                            <div class="grid md:grid-cols-3 gap-6 mt-8">
+                                <div class="bg-white/20 p-4 rounded-2xl heart-beat">
+                                    <div class="text-3xl mb-2">💚</div>
+                                    <div class="font-bold">Santé Mentale</div>
+                                </div>
+                                <div class="bg-white/20 p-4 rounded-2xl heart-beat" style="animation-delay: 0.5s">
+                                    <div class="text-3xl mb-2">🌱</div>
+                                    <div class="font-bold">Souveraineté Alimentaire</div>
+                                </div>
+                                <div class="bg-white/20 p-4 rounded-2xl heart-beat" style="animation-delay: 1s">
+                                    <div class="text-3xl mb-2">🌍</div>
+                                    <div class="font-bold">Soin de l'Environnement</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ce que nous faisons -->
+        <section class="py-20 bg-gradient-to-br from-emerald-50 to-green-100">
+            <div class="container mx-auto px-6">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16 fade-in">
+                        <h2 class="text-5xl font-bold text-green-800 mb-6 script-font">
+                            Vous vous demandez ce que nous faisons exactement ?
+                        </h2>
+                        <p class="text-xl text-gray-700">
+                            Chaque action a une histoire, chaque projet a un cœur
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Festival de l'Eau -->
+                        <div class="fade-in bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="h-48 bg-gradient-to-br from-blue-200 to-cyan-300 rounded-2xl mb-6 flex items-center justify-center">
+                                <p class="text-blue-800 text-center font-semibold">
+                                    📸 Festival des Femmes et de l'Eau<br>
+                                    <span class="text-sm font-normal">Célébrer la vie</span>
+                                </p>
+                            </div>
+                            <h3 class="text-xl font-bold text-blue-700 mb-3">Festival des Femmes et de l'Eau</h3>
+                            <p class="text-gray-600 mb-4">
+                                Parce que l'eau c'est la vie, et nous sommes les gardiennes de la vie. 
+                                Chaque festival est une célébration de notre force et de notre union.
+                            </p>
+                            <div class="text-blue-600 font-semibold">💧 Prendre soin de notre ressource la plus précieuse</div>
+                        </div>
+                        
+                        <!-- Jardins Écologiques -->
+                        <div class="fade-in bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="h-48 bg-gradient-to-br from-green-200 to-lime-300 rounded-2xl mb-6 flex items-center justify-center">
+                                <p class="text-green-800 text-center font-semibold">
+                                    📸 Jardins Écologiques<br>
+                                    <span class="text-sm font-normal">Semer l'avenir</span>
+                                </p>
+                            </div>
+                            <h3 class="text-xl font-bold text-green-700 mb-3">Culture dans les Jardins Écologiques</h3>
+                            <p class="text-gray-600 mb-4">
+                                Avec nos propres mains, nous cultivons non seulement la nourriture, mais l'espoir. 
+                                Chaque graine est une promesse d'un avenir plus durable.
+                            </p>
+                            <div class="text-green-600 font-semibold">🌱 Nourrir l'âme et le corps</div>
+                        </div>
+                        
+                        <!-- Marchés -->
+                        <div class="fade-in bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="h-48 bg-gradient-to-br from-yellow-200 to-orange-300 rounded-2xl mb-6 flex items-center justify-center">
+                                <p class="text-orange-800 text-center font-semibold">
+                                    📸 Marchés Mensuels<br>
+                                    <span class="text-sm font-normal">Échange et communauté</span>
+                                </p>
+                            </div>
+                            <h3 class="text-xl font-bold text-orange-700 mb-3">Marchés Mensuels</h3>
+                            <p class="text-gray-600 mb-4">
+                                Chaque mois, nous nous retrouvons pour échanger non seulement des produits, mais des histoires, 
+                                des sourires et des rêves. C'est notre espace de rencontre et de renforcement.
+                            </p>
+                            <div class="text-orange-600 font-semibold">🏪 Construire une communauté consciente</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gardiens de Vie -->
+        <section class="py-20 bg-gradient-to-br from-purple-100 to-pink-100">
+            <div class="container mx-auto px-6">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16 fade-in">
+                        <h2 class="text-5xl font-bold text-purple-800 mb-6 script-font">
+                            Et puis vint "Gardiens de Vie"...
+                        </h2>
+                        <p class="text-xl text-gray-700">
+                            Le projet qui nous a transformées pour toujours
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                        <div class="fade-in">
+                            <div class="bg-white p-4 rounded-2xl shadow-xl">
+                                <div class="h-80 bg-gradient-to-br from-purple-200 to-pink-300 rounded-xl flex items-center justify-center">
+                                    <p class="text-purple-800 text-center font-semibold text-lg">
+                                        📸 Espace photo :<br>
+                                        "Rencontre Gardiens de Vie"<br>
+                                        <span class="text-sm font-normal">Moment de reconnaissance et de croissance</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="fade-in">
+                            <div class="bg-gradient-to-br from-purple-600 to-pink-600 p-8 rounded-3xl text-white shadow-xl">
+                                <h3 class="text-3xl font-bold mb-6">Savez-vous ce que nous avons découvert ?</h3>
+                                <div class="space-y-4 text-lg">
+                                    <p class="flex items-start">
+                                        <span class="text-2xl mr-3">💝</span>
+                                        Que nous sommes des gardiennes naturelles, non seulement des autres, mais de nous-mêmes
+                                    </p>
+                                    <p class="flex items-start">
+                                        <span class="text-2xl mr-3">🤝</span>
+                                        Que nous pouvons nous connecter avec d'autres collectifs et créer des réseaux de soutien incroyables
+                                    </p>
+                                    <p class="flex items-start">
+                                        <span class="text-2xl mr-3">🌟</span>
+                                        Que notre travail transcende Sonsón et atteint toute la région
+                                    </p>
+                                    <p class="flex items-start">
+                                        <span class="text-2xl mr-3">🎓</span>
+                                        Que nous avons des outils puissants pour continuer à grandir
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nos Rêves -->
+        <section class="py-20 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white relative overflow-hidden">
+            <!-- Étoiles décoratives -->
+            <div class="absolute top-20 left-10 w-4 h-4 bg-yellow-400 rounded-full floating opacity-70"></div>
+            <div class="absolute top-32 right-20 w-3 h-3 bg-pink-400 rounded-full floating-delayed opacity-60"></div>
+            <div class="absolute bottom-32 left-20 w-5 h-5 bg-blue-400 rounded-full floating opacity-50"></div>
+            <div class="absolute top-1/2 right-10 w-2 h-2 bg-green-400 rounded-full floating-delayed opacity-80"></div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-6xl mx-auto text-center">
+                    <div class="fade-in mb-16">
+                        <h2 class="text-5xl md:text-6xl font-bold mb-6 script-font">
+                            Nos Rêves Brillent Comme des Étoiles
+                        </h2>
+                        <p class="text-xl text-purple-200">
+                            Et nous voulons que vous en fassiez partie
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-16">
+                        <div class="fade-in bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
+                            <div class="text-4xl mb-4">🤗</div>
+                            <h3 class="text-2xl font-bold mb-4">Rester Unies et Fortes</h3>
+                            <p class="text-lg text-purple-100">
+                                Parce qu'ensemble nous sommes invincibles. Nous voulons rester ce groupe de 48 femmes 
+                                qui prennent soin les unes des autres et prennent soin de leur territoire avec amour.
+                            </p>
+                        </div>
+                        
+                        <div class="fade-in bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
+                            <div class="text-4xl mb-4">🌐</div>
+                            <h3 class="text-2xl font-bold mb-4">Créer des Alliances Puissantes</h3>
+                            <p class="text-lg text-purple-100">
+                                Nous rêvons de nous connecter avec plus de collectifs, d'organisations et de personnes qui, comme nous, 
+                                croient au pouvoir du soin pour transformer les communautés.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="fade-in bg-gradient-to-r from-yellow-500 to-orange-500 p-8 rounded-3xl">
+                        <h3 class="text-3xl font-bold mb-4 text-white">Impact qui Transcende</h3>
+                        <p class="text-xl text-white mb-6">
+                            Nous ne voulons pas seulement changer Sonsón. Nous voulons que notre exemple inspire toute l'Antioquia, 
+                            tout le pays. Nous voulons démontrer que les femmes rurales ont le pouvoir de transformer le monde.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-6 mt-8">
+                            <div class="bg-white p-4 rounded-2xl shadow-xl">
+                                <div class="h-48 bg-gradient-to-br from-orange-200 to-red-300 rounded-xl flex items-center justify-center">
+                                    <p class="text-orange-800 text-center font-semibold">
+                                        📸 Vision d'Avenir<br>
+                                        <span class="text-sm font-normal">Nos rêves devenus réalité</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl shadow-xl">
+                                <div class="h-48 bg-gradient-to-br from-blue-200 to-indigo-300 rounded-xl flex items-center justify-center">
+                                    <p class="text-blue-800 text-center font-semibold">
+                                        📸 Notre Héritage<br>
+                                        <span class="text-sm font-normal">Impact sur la communauté</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Appel à l'Action -->
+        <section class="py-20 bg-gradient-to-br from-green-600 to-emerald-700">
+            <div class="container mx-auto px-6 text-center">
+                <div class="max-w-4xl mx-auto text-white fade-in">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 script-font">
+                        Sentez-vous que cette histoire pourrait aussi être la vôtre ?
+                    </h2>
+                    <p class="text-xl mb-8 text-green-100">
+                        Nous vous invitons à nous connaître, à faire partie de cette famille qui construit chaque jour un monde meilleur. 
+                        Parce que le soin n'est pas seulement notre mission, c'est notre cadeau au monde.
+                    </p>
+                    <div class="space-y-4 md:space-y-0 md:space-x-6 md:flex md:justify-center">
+                        <button class="bg-white text-green-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-50 transition-all duration-300 transform hover:scale-105 shadow-lg block w-full md:w-auto">
+                            Apprenez à Nous Connaître 💚
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-green-700 transition-all duration-300 transform hover:scale-105 block w-full md:w-auto">
+                            Rejoignez Notre Mission 🤝
+                        </button>
+                    </div>
+                    
+                    <div class="mt-16 bg-white/10 backdrop-blur-sm p-6 rounded-3xl border border-white/20">
+                        <p class="text-lg text-green-100 mb-4">
+                            <span class="font-bold">Association Municipale des Femmes María Martínez de Nisser</span>
+                        </p>
+                        <p class="text-green-200">
+                            Sonsón, Antioquia - Colombie<br>
+                            Fondée avec amour le 27 juin 2002 ❤️
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        let currentLanguage = 'es';
+
+        // Language switching function
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Hide all language content
+            document.querySelectorAll('.language-content').forEach(content => {
+                content.classList.add('language-hidden');
+            });
+            
+            // Show selected language content
+            document.querySelector(`.language-content[data-lang="${lang}"]`).classList.remove('language-hidden');
+            
+            // Update language button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active-lang');
+                btn.classList.add('bg-white/70');
+                btn.classList.remove('bg-white');
+            });
+            
+            const activeBtn = document.querySelector(`[data-lang="${lang}"]`);
+            activeBtn.classList.add('active-lang');
+            activeBtn.classList.remove('bg-white/70');
+            activeBtn.classList.add('bg-white');
+            
+            // Update document language
+            document.documentElement.lang = lang;
+            
+            // Re-initialize fade-in animations for new content
+            initializeFadeAnimations();
+        }
+
+        // Initialize fade-in animations
+        function initializeFadeAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all fade-in elements in current language
+            const currentContent = document.querySelector(`.language-content[data-lang="${currentLanguage}"]`);
+            if (currentContent) {
+                const fadeElements = currentContent.querySelectorAll('.fade-in');
+                fadeElements.forEach(el => {
+                    el.classList.remove('visible');
+                    observer.observe(el);
+                });
+            }
+        }
+
+        // Smooth scroll function with language support
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeFadeAnimations();
+            
+            // Add interactive hover effects
+            const cards = document.querySelectorAll('.hover\\:shadow-2xl');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+
+        // Re-initialize animations when language changes
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('lang-btn')) {
+                setTimeout(initializeFadeAnimations, 100);
+            }
+        });
+    </script>
+</body>
+</html>12 items-center mb-16">
+                        <div class="fade-in">
+                            <div class="bg-green-100 p-8 rounded-3xl shadow-lg pulse-grow">
+                                <h3 class="text-2xl font-bold text-green-800 mb-4">El Momento que Cambió Todo</h3>
+                                <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                                    Cuando decidimos unirnos, no sabíamos que estábamos plantando la semilla de algo extraordinario. 
+                                    Éramos mujeres con sueños, con ganas de cuidar no solo a nuestras familias, sino a toda nuestra comunidad.
+                                </p>
+                                <p class="text-green-700 font-semibold">
+                                    Y así nació la Asociación María Martínez de Nisser ❤️
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="fade-in">
+                            <div class="bg-white p-4 rounded-2xl shadow-xl">
+                                <div class="h-80 bg-gradient-to-br from-green-200 to-emerald-300 rounded-xl flex items-center justify-center">
+                                    <p class="text-green-800 text-center font-semibold text-lg">
+                                        📸 Espacio para foto:<br>
+                                        "El primer encuentro - 2002"<br>
+                                        <span class="text-sm font-normal">Momento fundacional de nuestra asociación</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Visual -->
+                    <div class="fade-in mb-16">
+                        <div class="bg-gradient-to-r from-green-600 to-emerald-600 p-8 rounded-3xl text-white text-center">
+                            <h3 class="text-3xl font-bold mb-4 script-font">Más de 20 años después...</h3>
+                            <p class="text-xl mb-6">
+                                Seguimos aquí, más fuertes que nunca, siendo 48 mujeres que han transformado no solo sus propias vidas, 
+                                sino la vida de todo Sonsón
+                            </p>
+                            <div class="grid md:grid-cols-3 gap-6 mt-8">
+                                <div class="bg-white/20 p-4 rounded-2xl heart-beat">
+                                    <div class="text-3xl mb-2">💚</div>
+                                    <div class="font-bold">Salud Mental</div>
+                                </div>
+                                <div class="bg-white/20 p-4 rounded-2xl heart-beat" style="animation-delay: 0.5s">
+                                    <div class="text-3xl mb-2">🌱</div>
+                                    <div class="font-bold">Soberanía Alimentaria</div>
+                                </div>
+                                <div class="bg-white/20 p-4 rounded-2xl heart-beat" style="animation-delay: 1s">
+                                    <div class="text-3xl mb-2">🌍</div>
+                                    <div class="font-bold">Cuidado del Entorno</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lo que hacemos -->
+        <section class="py-20 bg-gradient-to-br from-emerald-50 to-green-100">
+            <div class="container mx-auto px-6">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16 fade-in">
+                        <h2 class="text-5xl font-bold text-green-800 mb-6 script-font">
+                            ¿Te preguntas qué hacemos exactamente?
+                        </h2>
+                        <p class="text-xl text-gray-700">
+                            Cada acción tiene una historia, cada proyecto tiene corazón
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Festival del Agua -->
+                        <div class="fade-in bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="h-48 bg-gradient-to-br from-blue-200 to-cyan-300 rounded-2xl mb-6 flex items-center justify-center">
+                                <p class="text-blue-800 text-center font-semibold">
+                                    📸 Festival de las Mujeres y el Agua<br>
+                                    <span class="text-sm font-normal">Celebrando la vida</span>
+                                </p>
+                            </div>
+                            <h3 class="text-xl font-bold text-blue-700 mb-3">Festival de las Mujeres y el Agua</h3>
+                            <p class="text-gray-600 mb-4">
+                                Porque el agua es vida, y nosotras somos guardianas de la vida. 
+                                Cada festival es una celebración de nuestra fuerza y unión.
+                            </p>
+                            <div class="text-blue-600 font-semibold">💧 Cuidando nuestro recurso más preciado</div>
+                        </div>
+                        
+                        <!-- Eco Huertas -->
+                        <div class="fade-in bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="h-48 bg-gradient-to-br from-green-200 to-lime-300 rounded-2xl mb-6 flex items-center justify-center">
+                                <p class="text-green-800 text-center font-semibold">
+                                    📸 Eco Huertas<br>
+                                    <span class="text-sm font-normal">Sembrando futuro</span>
+                                </p>
+                            </div>
+                            <h3 class="text-xl font-bold text-green-700 mb-3">Siembra en Eco Huertas</h3>
+                            <p class="text-gray-600 mb-4">
+                                Con nuestras propias manos cultivamos no solo alimentos, sino esperanza. 
+                                Cada semilla es una promesa de un futuro más sostenible.
+                            </p>
+                            <div class="text-green-600 font-semibold">🌱 Alimentando el alma y el cuerpo</div>
+                        </div>
+                        
+                        <!-- Mercados -->
+                        <div class="fade-in bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                            <div class="h-48 bg-gradient-to-br from-yellow-200 to-orange-300 rounded-2xl mb-6 flex items-center justify-center">
+                                <p class="text-orange-800 text-center font-semibold">
+                                    📸 Mercados Mensuales<br>
+                                    <span class="text-sm font-normal">Intercambio y comunidad</span>
+                                </p>
+                            </div>
+                            <h3 class="text-xl font-bold text-orange-700 mb-3">Mercados Mensuales</h3>
+                            <p class="text-gray-600 mb-4">
+                                Cada mes nos encontramos para intercambiar no solo productos, sino historias, 
+                                sonrisas y sueños. Es nuestro espacio de encuentro y fortalecimiento.
+                            </p>
+                            <div class="text-orange-600 font-semibold">🏪 Construyendo comunidad consciente</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cuidadores de Vida -->
+        <section class="py-20 bg-gradient-to-br from-purple-100 to-pink-100">
+            <div class="container mx-auto px-6">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16 fade-in">
+                        <h2 class="text-5xl font-bold text-purple-800 mb-6 script-font">
+                            Y llegó "Cuidadores de Vida"...
+                        </h2>
+                        <p class="text-xl text-gray-700">
+                            El proyecto que nos transformó para siempre
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                        <div class="fade-in">
+                            <div class="bg-white p-4 rounded-2xl shadow-xl">
+                                <div class="h-80 bg-gradient-to-br from-purple-200 to-pink-300 rounded-xl flex items-center justify-center">
+                                    <p class="text-purple-800 text-center font-semibold text-lg">
+                                        📸 Espacio para foto:<br>
+                                        "Encuentro Cuidadores de Vida"<br>
+                                        <span class="text-sm font-normal">Momento de reconocimiento y crecimiento</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="fade-in">
+                            <div class="bg-gradient-to-br from-purple-600 to-pink-600 p-8 rounded-3xl text-white shadow-xl">
+                                <h3 class="text-3xl font-bold mb-6">¿Sabes lo que descubrimos?</h3>
+                                <div class="space-y-4 text-lg">
+                                    <p class="flex items-start">
+                                        <span class="text-2xl mr-3">💝</span>
+                                        Que somos cuidadoras natas, no solo de otros, sino de nosotras mismas
+                                    </p>
+                                    <p class="flex items-start">
+                                        <span class="text-2xl mr-3">🤝</span>
+                                        Que podemos conectar con otros colectivos y crear redes de apoyo increíbles
+                                    </p>
+                                    <p class="flex items-start">
+                                        <span class="text-2xl mr-3">🌟</span>
+                                        Que nuestro trabajo trasciende Sonsón y llega a toda la región
+                                    </p>
+                                    <p class="flex items-start">
+                                        <span class="text-2xl mr-3">🎓</span>
+                                        Que tenemos herramientas poderosas para seguir creciendo
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nuestros Sueños -->
+        <section class="py-20 bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white relative overflow-hidden">
+            <!-- Estrellas decorativas -->
+            <div class="absolute top-20 left-10 w-4 h-4 bg-yellow-400 rounded-full floating opacity-70"></div>
+            <div class="absolute top-32 right-20 w-3 h-3 bg-pink-400 rounded-full floating-delayed opacity-60"></div>
+            <div class="absolute bottom-32 left-20 w-5 h-5 bg-blue-400 rounded-full floating opacity-50"></div>
+            <div class="absolute top-1/2 right-10 w-2 h-2 bg-green-400 rounded-full floating-delayed opacity-80"></div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-6xl mx-auto text-center">
+                    <div class="fade-in mb-16">
+                        <h2 class="text-5xl md:text-6xl font-bold mb-6 script-font">
+                            Nuestros Sueños Brillan Como Estrellas
+                        </h2>
+                        <p class="text-xl text-purple-200">
+                            Y queremos que tú seas parte de ellos
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-16">
+                        <div class="fade-in bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
+                            <div class="text-4xl mb-4">🤗</div>
+                            <h3 class="text-2xl font-bold mb-4">Seguir Unidas y Fuertes</h3>
+                            <p class="text-lg text-purple-100">
+                                Porque juntas somos invencibles. Queremos mantenernos como ese grupo de 48 mujeres 
+                                que se cuidan entre sí y cuidan su territorio con amor.
+                            </p>
+                        </div>
+                        
+                        <div class="fade-in bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
+                            <div class="text-4xl mb-4">🌐</div>
+                            <h3 class="text-2xl font-bold mb-4">Crear Alianzas Poderosas</h3>
+                            <p class="text-lg text-purple-100">
+                                Soñamos con conectar con más colectivos, organizaciones y personas que, como nosotras, 
+                                creen en el poder del cuidado para transformar comunidades.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="fade-in bg-gradient-to-r from-yellow-500 to-orange-500 p-8 rounded-3xl">
+                        <h3 class="text-3xl font-bold mb-4 text-white">Impacto que Trasciende</h3>
+                        <p class="text-xl text-white mb-6">
+                            No solo queremos cambiar Sonsón. Queremos que nuestro ejemplo inspire a toda Antioquia, 
+                            a todo el país. Queremos demostrar que las mujeres rurales tenemos el poder de transformar el mundo.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-6 mt-8">
+                            <div class="bg-white p-4 rounded-2xl shadow-xl">
+                                <div class="h-48 bg-gradient-to-br from-orange-200 to-red-300 rounded-xl flex items-center justify-center">
+                                    <p class="text-orange-800 text-center font-semibold">
+                                        📸 Visión de Futuro<br>
+                                        <span class="text-sm font-normal">Nuestros sueños hechos realidad</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl shadow-xl">
+                                <div class="h-48 bg-gradient-to-br from-blue-200 to-indigo-300 rounded-xl flex items-center justify-center">
+                                    <p class="text-blue-800 text-center font-semibold">
+                                        📸 Nuestro Legado<br>
+                                        <span class="text-sm font-normal">El impacto en la comunidad</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-20 bg-gradient-to-br from-green-600 to-emerald-700">
+            <div class="container mx-auto px-6 text-center">
+                <div class="max-w-4xl mx-auto text-white fade-in">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 script-font">
+                        ¿Sientes que esta historia también puede ser tuya?
+                    </h2>
+                    <p class="text-xl mb-8 text-green-100">
+                        Te invitamos a conocernos, a ser parte de esta familia que cada día construye un mundo mejor. 
+                        Porque el cuidado no es solo nuestra misión, es nuestro regalo al mundo.
+                    </p>
+                    <div class="space-y-4 md:space-y-0 md:space-x-6 md:flex md:justify-center">
+                        <button class="bg-white text-green-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-50 transition-all duration-300 transform hover:scale-105 shadow-lg block w-full md:w-auto">
+                            Conócenos Mejor 💚
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-green-700 transition-all duration-300 transform hover:scale-105 block w-full md:w-auto">
+                            Únete a Nuestra Misión 🤝
+                        </button>
+                    </div>
+                    
+                    <div class="mt-16 bg-white/10 backdrop-blur-sm p-6 rounded-3xl border border-white/20">
+                        <p class="text-lg text-green-100 mb-4">
+                            <span class="font-bold">Asociación Municipal de Mujeres María Martínez de Nisser</span>
+                        </p>
+                        <p class="text-green-200">
+                            Sonsón, Antioquia - Colombia<br>
+                            Fundada con amor el 27 de junio de 2002 ❤️
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ENGLISH VERSION -->
+    <div class="language-content language-hidden" data-lang="en">
+        <!-- Hero Section -->
+        <section class="min-h-screen hero-gradient relative overflow-hidden flex items-center">
+            <!-- Floating Elements -->
+            <div class="absolute top-20 left-10 w-16 h-16 water-drop floating opacity-30"></div>
+            <div class="absolute top-32 right-20 w-12 h-12 leaf-shape floating-delayed opacity-40"></div>
+            <div class="absolute bottom-32 left-20 w-20 h-20 rounded-full bg-yellow-400 floating opacity-20"></div>
+            <div class="absolute top-1/2 right-10 w-8 h-8 bg-pink-400 rounded-full floating opacity-25"></div>
+            
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-4xl mx-auto text-center text-white">
+                    <h1 class="text-6xl md:text-8xl font-bold mb-6 fade-in script-font">
+                        Did you know that in Sonsón...
+                    </h1>
+                    <div class="text-2xl md:text-3xl mb-8 fade-in leading-relaxed">
+                        <p class="mb-4">48 extraordinary women have been</p>
+                        <p class="mb-4 text-yellow-200 font-semibold">sowing hope</p>
+                        <p class="mb-4">since 2002?</p>
+                    </div>
+                    <div class="fade-in">
+                        <p class="text-xl md:text-2xl mb-8 text-green-100">
+                            This is our story. This is your invitation to discover
+                            <span class="font-bold text-yellow-300">a legacy of care and love</span>
+                        </p>
+                        <button onclick="scrollToSection('historia-en')" class="bg-white text-green-800 px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            Discover Our Story ✨
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Historia Section -->
+        <section id="historia-en" class="py-20 bg-gradient-to-br from-white to-green-50 relative">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-400 via-emerald-500 to-green-600"></div>
+            
+            <div class="container mx-auto px-6">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16 fade-in">
+                        <h2 class="text-5xl md:text-6xl font-bold text-green-800 mb-6 script-font">
+                            Imagine for a moment...
+                        </h2>
+                        <p class="text-xl text-gray-700">
+                            On June 27, 2002, a group of brave women decided it was time to change their reality
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-
